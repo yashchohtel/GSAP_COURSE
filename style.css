@@ -1,10 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
 
+.page {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.page1 {
+  background-color: rgb(116, 116, 128);
+}
 
+.page2 {
+  background-color: rgb(215, 127, 127);
+}
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+.page3 {
+  background-color: rgb(132, 219, 132);
+}
+
+.box {
+  height: 300px;
+  width: 300px;
+  background-color: crimson;
 }
