@@ -3,15 +3,118 @@ import { gsap } from "gsap";
 
 /* ============================================================= */
 
+/* PRACTICE QUESTION 0 ↓  */
+
+// gsap.to(".item1", {
+//   x: 500,
+//   duration: 2,
+//   rotation: 360,
+//   ease: "power2.out"
+// });
+
+/* PRACTICE QUESTION 0 ↑  */
+
+/* ============================================================= */
+
 /* PRACTICE QUESTION 1 ↓  */
 
-gsap.to(".moveFirst", {
-  x: 500,
-  duration: 2,
-  rotation: 360,
-  ease: "power2.out"
-});
+// gsap.fromTo(
+//   ".item2",
+//   {
+//     x: 0,
+//     opacity: 0,
+//     scale: 0.5
+//   },
+//   {
+//     x: 500,
+//     opacity: 1,
+//     scale: 1,
+//     duration: 2
+//   }
+// );
 
 /* PRACTICE QUESTION 1 ↑  */
 
-/* ============================================================= */ 
+/* ============================================================= */
+
+
+/* PRACTICE QUESTION 2 ↓  */
+
+// document.querySelectorAll(".btn").forEach(btn => {
+
+//   btn.addEventListener("mouseenter", () => {
+
+//     if (btn.classList.contains("btn--scale")) {
+
+//       gsap.to(btn, {
+//         scale: 1.08,
+//         duration: 0.3,
+//         ease: "back.out(2)"
+//       });
+
+//     }
+
+//     else if (btn.classList.contains("btn--glow")) {
+
+//       gsap.to(btn, {
+//         boxShadow: "0 0 25px rgba(79, 124, 255, 0.8)",
+//         duration: 0.4,
+//         ease: "power2.out"
+//       });
+
+//     }
+
+//     else if (btn.classList.contains("btn--wiggle")) {
+
+//       gsap.to(btn, {
+//         rotation: 5,
+//         duration: 0.1,
+//         ease: "power1.inOut",
+//         yoyo: true,
+//         repeat: 1
+//       });
+
+//     }
+
+//   });
+
+//   btn.addEventListener("mouseleave", () => {
+
+//     if (btn.classList.contains("btn--scale")) {
+
+//       gsap.to(btn, {
+//         scale: 1,
+//         duration: 0.3,
+//         ease: "power2.out"
+//       });
+
+//     } else if (btn.classList.contains("btn--glow")) {
+
+//       gsap.to(btn, {
+//         boxShadow: "0 0 0px rgba(79, 124, 255, 0)",
+//         duration: 0.3,
+//         ease: "power2.out"
+//       });
+
+//     } else if (btn.classList.contains("btn--wiggle")) {
+
+//       gsap.to(btn, {
+//         rotation: 0,
+//         duration: 0.2,
+//         ease: "power2.out"
+//       });
+
+//     }
+//   });
+
+// });
+
+/* PRACTICE QUESTION 2 ↑  */
+
+/* ============================================================= */
+
+/* PRACTICE QUESTION 3 ↓  */
+
+
+
+/* PRACTICE QUESTION 3 ↑  */
