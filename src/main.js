@@ -115,177 +115,77 @@ import { gsap } from "gsap";
 
 /* PRACTICE QUESTION 3 ↓  */
 
+// const items = document.querySelectorAll(".item");
+// const button = document.querySelector("#play");
 
+// button.addEventListener("click", () => {
+//   gsap.fromTo(
+//     items,
+//     {
+//       scale: 0,
+//       opacity: 0,
+//       rotation: -180
+//     },
+//     {
+//       scale: 1,
+//       opacity: 1,
+//       rotation: 0,
+//       duration: 0.8,
+//       ease: "back.out(1.7)",
+
+//       stagger: {
+//         each: 0.15,
+//         from: "random",
+//         grid: "auto"
+//       }
+//     }
+//   );
+// });
 
 /* PRACTICE QUESTION 3 ↑  */
 
+/* ============================================================= */
 
-const users = [
-  { id: 1, name: "Yash", age: 22, active: true },
-  { id: 2, name: "Rahul", age: 25, active: false },
-  { id: 3, name: "Aman", age: 21, active: true },
-  { id: 4, name: "Vikas", age: 28, active: true }
-];
+/* PRACTICE QUESTION 4 ↑  */
 
-const products = [
-  { id: 101, name: "Laptop", price: 65000 },
-  { id: 102, name: "Mouse", price: 1200 },
-  { id: 103, name: "Keyboard", price: 2500 },
-  { id: 104, name: "Monitor", price: 18000 }
-];
+const tl = gsap.timeline();
 
-function getActiveUsers(list) {
-  return list.filter(user => user.active);
-}
-
-function getUserById(list, id) {
-  return list.find(user => user.id === id);
-}
-
-function calculateTotal(items) {
-  return items.reduce((total, item) => {
-    return total + item.price;
-  }, 0);
-}
-
-function formatPrice(price) {
-  return `₹${price.toLocaleString("en-IN")}`;
-}
-
-function createProductCard(product) {
-  const card = document.createElement("div");
-  card.className = "product-card";
-
-  const title = document.createElement("h3");
-  title.textContent = product.name;
-
-  const price = document.createElement("p");
-  price.textContent = formatPrice(product.price);
-
-  const button = document.createElement("button");
-  button.textContent = "Add to Cart";
-
-  button.addEventListener("click", () => {
-    console.log(`${product.name} added to cart`);
-  });
-
-  card.appendChild(title);
-  card.appendChild(price);
-  card.appendChild(button);
-
-  return card;
-}
-
-function renderProducts(list, container) {
-  container.innerHTML = "";
-
-  list.forEach(product => {
-    const card = createProductCard(product);
-    container.appendChild(card);
-  });
-}
-
-function searchProducts(list, keyword) {
-  return list.filter(product =>
-    product.name.toLowerCase().includes(keyword.toLowerCase())
-  );
-}
-
-function sortByPrice(list, order = "asc") {
-  return [...list].sort((a, b) => {
-    if (order === "asc") {
-      return a.price - b.price;
-    }
-
-    return b.price - a.price;
-  });
-}
-
-function createUserMessage(user) {
-  if (!user) {
-    return "User not found";
-  }
-
-  return `Welcome back, ${user.name}!`;
-}
-
-const activeUsers = getActiveUsers(users);
-
-console.log("Active users:", activeUsers);
-
-const selectedUser = getUserById(users, 2);
-
-console.log(createUserMessage(selectedUser));
-
-const totalPrice = calculateTotal(products);
-
-console.log("Total:", formatPrice(totalPrice));
-
-const expensiveProducts = products.filter(product => {
-  return product.price > 5000;
+tl.to(".box1", {
+  x: 500,
+  duration: 1,
+  ease: "power2.out"
 });
 
-console.log("Expensive:", expensiveProducts);
+tl.to(".box2", {
+  x: 500,
+  duration: 1,
+  ease: "back.out(1.7)"
+});
 
-const sortedProducts = sortByPrice(products, "desc");
+tl.to(".box3", {
+  x: 500,
+  duration: 1,
+  ease: "power2.inOut"
+}, 0);
 
-console.log("Sorted:", sortedProducts);
+tl.to(".box4", {
+  x: 500,
+  duration: 1,
+  ease: "elastic.out(1, 0.5)"
+});
 
-const result = searchProducts(products, "mouse");
+tl.to(".box5", {
+  x: 500,
+  duration: 1,
+  ease: "circ.out"
+});
 
-console.log("Search result:", result);
+tl.to(".box6", {
+  x: 500,
+  duration: 1,
+  ease: "expo.out"
+});
 
-const container = document.querySelector(".products");
+/* PRACTICE QUESTION 4 ↓  */
 
-if (container) {
-  renderProducts(products, container);
-}
-
-const state = {
-  loading: false,
-  error: null,
-  data: []
-};
-
-function setLoading(value) {
-  state.loading = value;
-  console.log("Loading:", value);
-}
-
-function setError(message) {
-  state.error = message;
-  console.error("Error:", message);
-}
-
-async function loadData() {
-  try {
-    setLoading(true);
-
-    const response = await fetch("/api/products");
-
-    if (!response.ok) {
-      throw new Error("Failed to fetch products");
-    }
-
-    const data = await response.json();
-
-    state.data = data;
-
-    console.log("Data loaded:", data);
-  } catch (error) {
-    setError(error.message);
-  } finally {
-    setLoading(false);
-  }
-}
-
-const numbers = [5, 10, 15, 20, 25];
-
-const doubled = numbers.map(number => number * 2);
-
-const filtered = doubled.filter(number => number > 25);
-
-console.log(doubled);
-console.log(filtered);
-
-loadData();
+/* ============================================================= */
