@@ -104,7 +104,7 @@ button {
 
 /* PRACTICE QUESTION 4 ↓  */
 
-.box {
+/* .box {
   width: 100px;
   height: 100px;
   margin-bottom: 10px;
@@ -132,8 +132,141 @@ button {
 
 .box6 {
   background: pink;
-}
+} */
 
 /* PRACTICE QUESTION 4 ↑  */
+
+/* ============================================================= */
+
+/* PRACTICE QUESTION 5 ↓  */
+
+body{
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 80px 7%;
+  display: flex;
+  align-items: center;
+  background: #0d1020;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+
+.hero-tag {
+  margin-bottom: 25px;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #8ea8ff;
+  font-weight: 600;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(60px, 9vw, 140px);
+  line-height: 0.9;
+  letter-spacing: -6px;
+  font-weight: 700;
+}
+
+.hero h1 span {
+  color: #6d8cff;
+}
+
+.hero-description {
+  max-width: 500px;
+  margin-top: 35px;
+  color: #a7acc0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.hero-btn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 50px;
+  background: #6d8cff;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hero-note {
+  color: #777d95;
+  font-size: 13px;
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+}
+
+.shape-one {
+  width: 450px;
+  height: 450px;
+  right: -100px;
+  top: 10%;
+  background: #293d9b;
+  opacity: 0.35;
+}
+
+.shape-two {
+  width: 250px;
+  height: 250px;
+  right: 25%;
+  bottom: -100px;
+  background: #734de8;
+  opacity: 0.25;
+}
+
+.hero-bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 7%;
+  right: 7%;
+  display: flex;
+  justify-content: space-between;
+  color: #555b73;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.loader {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-count h2 {
+  font-size: 2rem;
+  color: whitesmoke;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* PRACTICE QUESTION 5 ↑  */
 
 /* ============================================================= */

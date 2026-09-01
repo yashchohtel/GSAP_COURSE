@@ -148,44 +148,93 @@ import { gsap } from "gsap";
 
 /* PRACTICE QUESTION 4 ↑  */
 
-const tl = gsap.timeline();
+// const tl = gsap.timeline();
 
-tl.to(".box1", {
-  x: 500,
-  duration: 1,
-  ease: "power2.out"
-});
+// tl.to(".box1", {
+//   x: 500,
+//   duration: 1,
+//   ease: "power2.out"
+// });
 
-tl.to(".box2", {
-  x: 500,
-  duration: 1,
-  ease: "back.out(1.7)"
-});
+// tl.to(".box2", {
+//   x: 500,
+//   duration: 1,
+//   ease: "back.out(1.7)"
+// });
 
-tl.to(".box3", {
-  x: 500,
-  duration: 1,
-  ease: "power2.inOut"
-}, 0);
+// tl.to(".box3", {
+//   x: 500,
+//   duration: 1,
+//   ease: "power2.inOut"
+// }, 0);
 
-tl.to(".box4", {
-  x: 500,
-  duration: 1,
-  ease: "elastic.out(1, 0.5)"
-});
+// tl.to(".box4", {
+//   x: 500,
+//   duration: 1,
+//   ease: "elastic.out(1, 0.5)"
+// });
 
-tl.to(".box5", {
-  x: 500,
-  duration: 1,
-  ease: "circ.out"
-});
+// tl.to(".box5", {
+//   x: 500,
+//   duration: 1,
+//   ease: "circ.out"
+// });
 
-tl.to(".box6", {
-  x: 500,
-  duration: 1,
-  ease: "expo.out"
-});
+// tl.to(".box6", {
+//   x: 500,
+//   duration: 1,
+//   ease: "expo.out"
+// });
 
 /* PRACTICE QUESTION 4 ↓  */
+
+/* ============================================================= */
+
+/* PRACTICE QUESTION 5 ↓  */
+
+const obj = {
+  value: 0,
+}
+
+const counter = document.querySelector(".loader-count h2");
+
+const tl = gsap.timeline({ paused: true });
+
+tl.to(".loader", {
+  yPercent: 100,
+  duration: 1.2,
+  ease: "expo.out"
+}).from(".hero",{
+  scale:1.5,
+  duratino:0.5,
+  ease:"expo.out"
+}, "-=1")
+
+gsap.to(obj, {
+
+  value: 100,
+  duration: 3,
+  ease: "none",
+
+  onUpdate: () => {
+    counter.textContent = `${Math.round(obj.value)}%`
+  },
+
+  onComplete: () => {
+    gsap.to(counter, {
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      onComplete: () => {
+        tl.play()
+      }
+    })
+  },
+
+})
+
+
+
+/* PRACTICE QUESTION 5 ↑  */
 
 /* ============================================================= */
